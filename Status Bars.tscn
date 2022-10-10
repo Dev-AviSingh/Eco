@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Status Bar.gd" type="Script" id=2]
+[ext_resource path="res://BarSprite.tscn" type="PackedScene" id=3]
+[ext_resource path="res://BarSprite.shader" type="Shader" id=4]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 4 )
+shader_param/width = null
+shader_param/height = null
+shader_param/healthPercentageGone = 0.1
+
+[node name="Status Bars" type="Node2D"]
+visible = false
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="." instance=ExtResource( 3 )]
+material = SubResource( 1 )
+position = Vector2( 0, -40 )
+scale = Vector2( 1, 0.1 )
+texture = ExtResource( 1 )
